@@ -61,9 +61,10 @@ var cerradeiro = {
         ] 
     };
     
-animals.push(quackers);
+animals[animals.length] = quackers;
+
 console.log(animals);
-animals.push(felino);
-animals.push(cerradeiro);
+
+animals.push(felino, cerradeiro);
 
 console.log(animals);
