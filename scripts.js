@@ -4,7 +4,7 @@ animal.username = 'Rast';
 animal['tagline'] = 'Come on tiger'; 
  
 var noises = []; 
-animal['noises'] = noises 
+animal['noises'] = noises; 
  
 console.log(animal);
 
@@ -68,3 +68,65 @@ console.log(animals);
 animals.push(felino, cerradeiro);
 
 console.log(animals);
+
+var AnimalTestUser = function(username) {
+    var args = arguments.length;
+    var otherArgs = [];
+    if (args > 1) {
+        for (var i=1; i<args; i++) {
+            otherArgs.push(arguments[i]);
+        }
+    }
+    return { 
+        username: username,
+        otherArgs: otherArgs
+    };
+};
+
+var AnimalCreator = function(username, species, tagline, noises) {
+    return {
+        username: username,
+        species: species,
+        tagline: tagline,
+        noises: noises,
+        friends: []
+    }
+}
+
+var sheep = AnimalCreator('Cloud', 'sheep', 'You can count on me!', ['baahhh', 'arrgg', 'chewchewchew']);
+var cow = AnimalCreator('miranha', 'cow', 'sou o miranha', ['mooo', 'ish ish', 'broooo']);
+var llama = AnimalCreator('Zeny', 'llama', 'im so cute', ['mhua', 'uhhhhu', 'ohnn ohnnn']);
+
+var addFriend = function(name, friend){
+    name['friends'].push(friend['username']);
+};
+addFriend(sheep, cow);
+addFriend(sheep, llama);
+
+var myFarm = [];
+addFriend(cow, sheep);
+addFriend(cow, llama);
+
+addFriend(llama, sheep);
+addFriend(llama, cow);
+
+myFarm.push(sheep, cow, llama);
+
+var addMatchesArray = function(farm) {
+    var animals = farm.length;    
+    for (var i=0; i<animals; i++) {
+        farm[i].matches = []; 
+    }
+}
+
+addMatchesArray(myFarm); 
+
+var giveMatches = function(farm){
+    var animals = farm.length;    
+    for (var i=0; i<animals; i++) {
+        match = farm[i].friends[Math.floor(Math.random() * farm[i].friends.length)];
+        farm[i].matches.push(match); 
+    }
+}
+giveMatches(myFarm); 
+console.log(myFarm[0]);

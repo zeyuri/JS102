@@ -1,0 +1,13 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "name": "Launch index.html",
+            "type": "chrome",
+            "runtimeExecutable": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary",
+            "request": "launch",
+            "file": "${workspaceFolder}/index.html",
+            
+        }
+    ]
+}
