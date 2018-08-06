@@ -97,8 +97,8 @@ var sheep = AnimalCreator('Cloud', 'sheep', 'You can count on me!', ['baahhh', '
 var cow = AnimalCreator('miranha', 'cow', 'sou o miranha', ['mooo', 'ish ish', 'broooo']);
 var llama = AnimalCreator('Zeny', 'llama', 'im so cute', ['mhua', 'uhhhhu', 'ohnn ohnnn']);
 
-var addFriend = function(name, friend){
-    name['friends'].push(friend['username']);
+var addFriend = function(animal, friend){
+    animal.friends.push(friend.username);
 };
 addFriend(sheep, cow);
 addFriend(sheep, llama);
