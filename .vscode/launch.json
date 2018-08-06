@@ -4,6 +4,7 @@
         {
             "name": "Launch index.html",
             "type": "chrome",
+            "userDataDir": "${workspaceRoot}/out/chrome",
             "runtimeExecutable": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary",
             "request": "launch",
             "file": "${workspaceFolder}/index.html",
