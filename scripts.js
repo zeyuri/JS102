@@ -6,8 +6,6 @@ animal['tagline'] = 'Come on tiger';
 var noises = []; 
 animal['noises'] = noises; 
  
-console.log(animal);
-
 var counter = 0; 
  
 for(var key in animal) { 
@@ -63,11 +61,7 @@ var cerradeiro = {
     
 animals[animals.length] = quackers;
 
-console.log(animals);
-
 animals.push(felino, cerradeiro);
-
-console.log(animals);
 
 var AnimalTestUser = function(username) {
     var args = arguments.length;
@@ -129,4 +123,28 @@ var giveMatches = function(farm){
     }
 }
 giveMatches(myFarm); 
-console.log(myFarm[0]);
+
+
+var friends = [];
+
+friends.push(myFarm[0].username, myFarm[1].username);
+
+console.log(friends);
+
+var relationships = {};
+
+relationships.friends = friends;
+
+console.log(relationships);
+
+var matches = [];
+
+relationships.matches = matches;
+
+relationships.matches.push(relationships.friends[0]);
+
+console.log(relationships);
+
+for(var i = 0; i < myFarm.length; i++) {
+    myFarm[i].relationships = relationships;
+};
